@@ -1,0 +1,14 @@
+
+# Node.js
+node_modules
+.env
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Icon?

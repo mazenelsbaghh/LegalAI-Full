@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  direction: rtl;
+  background-color: #1a1a1a;
+  color: white;
+  background-image: radial-gradient(circle at center, #333333 0%, #1a1a1a 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-600;
+}
+
+/* Glass effect */
+.glass-effect {
+  @apply bg-dark-800/50 backdrop-blur-lg;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fabd00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c89700;
+}
+
+/* Fix Tailwind RTL issues */
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Custom button styles */
+.btn-gold {
+  @apply bg-gradient-to-r from-gold-500 to-gold-600 text-dark-900 font-bold hover:from-gold-600 hover:to-gold-700 transition-all;
+}
+
+.btn-dark {
+  @apply bg-dark-800 text-gold-500 border border-gold-500 hover:bg-dark-700 transition-all;
+}
+
+/* Custom input styles */
+.input-dark {
+  @apply bg-dark-800/50 border border-dark-600 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-dark-400;
+}
+
+/* Custom table styles */
+.table-dark {
+  @apply bg-dark-800/50 backdrop-blur-lg border border-gold-500/20 rounded-lg overflow-hidden;
+}
+
+.table-dark th {
+  @apply bg-dark-700/50 text-gold-400 font-semibold px-6 py-3 text-right;
+}
+
+.table-dark td {
+  @apply px-6 py-4 text-white border-t border-gold-500/10;
+}
+
+.table-dark tr:hover {
+  @apply bg-dark-700/50;
+}
+
+/* Custom card styles */
+.card-dark {
+  @apply bg-dark-800/50 backdrop-blur-lg border border-gold-500/20 rounded-lg p-6;
+}
+
+/* Custom form styles */
+.form-dark label {
+  @apply block text-sm font-medium text-gold-400 mb-2;
+}
+
+.form-dark input,
+.form-dark select,
+.form-dark textarea {
+  @apply w-full px-4 py-2 bg-dark-800/50 border border-gold-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-gold-500;
+}
+
+/* Custom badge styles */
+.badge-gold {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-gold-500/20 text-gold-400;
+}
+
+.badge-dark {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-dark-700/50 text-gray-300;
+}
+
+/* Dashboard specific styles */
+.dashboard-section {
+  @apply bg-dark-800/50 backdrop-blur-lg rounded-2xl p-6 border border-gold-500/20;
+}
+
+.dashboard-title {
+  @apply text-3xl font-bold text-gold-500 mb-6;
+}
+
+.dashboard-subtitle {
+  @apply text-xl font-bold text-gold-400 mb-4;
+}
+
+.dashboard-card {
+  @apply bg-dark-700/50 p-6 rounded-xl border border-gold-500/10 hover:bg-dark-600/50 transition-all;
+}
+
+.dashboard-button {
+  @apply flex items-center px-4 py-2 rounded-lg font-bold transition-all;
+}
+
+.dashboard-button-primary {
+  @apply flex items-center px-6 py-3 rounded-xl font-bold text-dark-900 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 shadow-lg hover:shadow-gold-500/20 transition-all;
+}
+
+.dashboard-button-secondary {
+  @apply dashboard-button bg-dark-700/50 text-gold-400 border border-gold-500/20 hover:bg-dark-600/50;
+}
+
+.dashboard-input {
+  @apply w-full px-4 py-2 bg-dark-700/50 border border-gold-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-500;
+}
+
+.dashboard-select {
+  @apply dashboard-input appearance-none;
+}
+
+.dashboard-textarea {
+  @apply dashboard-input resize-none;
+}
+
+.dashboard-table {
+  @apply w-full border-collapse;
+}
+
+.dashboard-table th {
+  @apply px-6 py-3 text-right text-sm font-semibold text-gold-400 bg-dark-700/50 border-b border-gold-500/10;
+}
+
+.dashboard-table td {
+  @apply px-6 py-4 text-white border-b border-gold-500/10;
+}
+
+.dashboard-table tr:hover {
+  @apply bg-dark-600/50;
+}
+
+/* Status badges */
+.status-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm;
+}
+
+.status-badge-success {
+  @apply status-badge bg-green-500/20 text-green-400;
+}
+
+.status-badge-warning {
+  @apply status-badge bg-yellow-500/20 text-yellow-400;
+}
+
+.status-badge-error {
+  @apply status-badge bg-red-500/20 text-red-400;
+}
+
+.status-badge-info {
+  @apply status-badge bg-blue-500/20 text-blue-400;
+}
+
+/* Typing animation */
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing-indicator span {
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+  opacity: 0.3;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
